@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Análise de Risco</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #0078D7;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0078D7;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Análise de Risco</h1>
+    <form method="POST">
+        <label>Grau de risco (BX ou AL):</label>
+        <input type="text" name="risco" required>
+
+        <label>Valor:</label>
+        <input type="number" name="valor" step="0.01" required>
+
+        <button type="submit">Analisar</button>
+    </form>
+
+    {% if resultado %}
+        <div class="resultado">{{ resultado }}</div>
+    {% endif %}
+</body>
+</html>
